@@ -1,0 +1,92 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --no-color pub get
+
+## exception
+
+_CastError: type 'Null' is not a subtype of type 'String' in type cast
+
+```
+#0      new WebPlugin.fromYaml (package:flutter_tools/src/platform_plugins.dart:548:34)
+#1      new Plugin._fromMultiPlatformYaml (package:flutter_tools/src/plugins.dart:142:21)
+#2      new Plugin.fromYaml (package:flutter_tools/src/plugins.dart:78:21)
+#3      _pluginFromPackage (package:flutter_tools/src/flutter_plugins.dart:63:17)
+#4      findPlugins (package:flutter_tools/src/flutter_plugins.dart:88:28)
+<asynchronous suspension>
+#5      refreshPluginsList (package:flutter_tools/src/flutter_plugins.dart:1080:32)
+<asynchronous suspension>
+#6      FlutterProject.ensureReadyForPlatformSpecificTooling (package:flutter_tools/src/project.dart:357:5)
+<asynchronous suspension>
+#7      PackagesGetCommand.runCommand (package:flutter_tools/src/commands/packages.dart:179:5)
+<asynchronous suspension>
+#8      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1257:27)
+<asynchronous suspension>
+#9      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#10     CommandRunner.runCommand (package:args/command_runner.dart:209:13)
+<asynchronous suspension>
+#11     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:283:9)
+<asynchronous suspension>
+#12     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#13     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:229:5)
+<asynchronous suspension>
+#14     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:64:9)
+<asynchronous suspension>
+#15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:150:19)
+<asynchronous suspension>
+#16     main (package:flutter_tools/executable.dart:91:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.7.7, on macOS 12.6.1 21G217 darwin-x64, locale en-IN)
+    • Flutter version 3.7.7 on channel stable at /Users/pro/Documents/flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision 2ad6cd72c0 (9 weeks ago), 2023-03-08 09:41:59 -0800
+    • Engine revision 1837b5be5f
+    • Dart version 2.19.4
+    • DevTools version 2.20.1
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.1)
+    • Android SDK at /Users/pro/Library/Android/sdk
+    • Platform android-33, build-tools 33.0.1
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 11.0.13+0-b1751.21-8125866)
+    • All Android licenses accepted.
+
+[!] Xcode - develop for iOS and macOS (Xcode 14.2)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 14C18
+    ✗ CocoaPods not installed.
+        CocoaPods is used to retrieve the iOS and macOS platform side's plugin code that responds to your plugin usage on the Dart side.
+        Without CocoaPods, plugins will not work on iOS or macOS.
+        For more info, see https://flutter.dev/platform-plugins
+      To install see https://guides.cocoapods.org/using/getting-started.html#installation for instructions.
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 2021.3)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 11.0.13+0-b1751.21-8125866)
+
+[✓] Connected device (3 available)
+    • Mi A3 (mobile)  • a076224a6550 • android-arm64  • Android 11 (API 30)
+    • macOS (desktop) • macos        • darwin-x64     • macOS 12.6.1 21G217 darwin-x64
+    • Chrome (web)    • chrome       • web-javascript • Google Chrome 113.0.5672.92
+
+[✓] HTTP Host Availability
+    • All required HTTP hosts are available
+
+! Doctor found issues in 1 category.
+```
